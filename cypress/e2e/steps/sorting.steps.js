@@ -3,14 +3,10 @@ import { InventoryPage } from '../../pages/inventoryPage';
 
 const inventoryPage = new InventoryPage();
 
-When('the user clicks on the "sort type box"', () => {
-    inventoryPage.clickSortTypeBox();
-});
-
-When('the user clicks on {string} sorting option', (sortingOption) => {
+When('the user selects {string} on the sort type box', (sortingOption) => {
     inventoryPage.selectSortType(sortingOption);
 });
 
 Then('the list of products starts with {string}', (productName) => {
-    inventoryPage.elements.inventoryList().first().should('contain.text', productName);
+    inventoryPage.elements.inventoryItems().first().should('contain.text', productName);
 });

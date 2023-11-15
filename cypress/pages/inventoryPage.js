@@ -8,9 +8,9 @@ export class InventoryPage {
 
         logOutLink: () => cy.get('#logout_sidebar_link'),
 
-        sortTypeBox: () => cy.get('.select_container'),
+        sortTypeBox: () => cy.get('.product_sort_container'),
 
-        inventoryList: () => cy.get('.inventory_list'),
+        inventoryItems: () => cy.get('.inventory_item'),
 
         firstAddToCartButton: () => cy.get('#add-to-cart-sauce-labs-backpack'),
 
@@ -28,12 +28,8 @@ export class InventoryPage {
         this.elements.burgerMenuButton().click();
     }
 
-    clickSortTypeBox() {
-        this.elements.sortTypeBox().click();
-    }
-
     selectSortType(sortingOption) {
-        this.elements.sortTypeBox().filter(':contains("' + sortingOption + '")').click();
+        this.elements.sortTypeBox().select(sortingOption);
     }
 
     clickCartIcon() {
