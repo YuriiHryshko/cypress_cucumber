@@ -13,6 +13,4 @@ jobs:
         with:
           publish_dir: cypress/reports
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: GitHub Actions
-          user_email: actions@github.com
 
